@@ -14,17 +14,17 @@
             <h1 id="title"><span class="title-white">Generate a</span><br><span class="title-green">random password</span></h1>
             <p class="subtitle">Never use an insecure password again.</p>
             <div class="generate-container">
-                <button class="btn-generate">Generate passwords</button>
+                <button class="btn-generate" id="generate-passwords" onclick="generatePasswords()">Generate passwords</button>
             </div>
             <div class="passwords-container">
                 <div class="password-container">
-                    <p id="generated-password-el-1" class="generated-password">password-placeholder</p>
+                    <p id="generated-password-el-1" class="generated-password"></p>
                 </div>
                 <div class="password-container">
-                    <p id="generated-password-el-2" class="generated-password">password-placeholder</p>
+                    <p id="generated-password-el-2" class="generated-password"></p>
                 </div>
             </div>
         </div>
-        <script src="index.js"></script>
+        <script type="module" src="js/index.js"></script>
     </body>
 </html>

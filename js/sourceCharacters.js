@@ -1,4 +1,4 @@
-const characters = [
+export const characters = [
   'A',
   'B',
   'C',
