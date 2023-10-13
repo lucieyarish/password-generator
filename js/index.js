@@ -18,7 +18,6 @@ userInputEl.addEventListener('blur', () => {
 function generatePasswords() {
   resetPreviousPasswords();
   let isPasswordLengthValid = validateInput();
-  console.log(isPasswordLengthValid);
 
   if (!isPasswordLengthValid) {
     return;
@@ -49,10 +48,10 @@ function resetPreviousPasswords() {
 }
 
 function validateInput() {
-  if (userInput.length !== 0 && userInput > 20) {
+  if (userInput !== 0 && userInput > 20) {
     errorMsgEl.textContent = 'Required maximum password lenght is 20.';
     return false;
-  } else if (userInput < 8) {
+  } else if (userInput !== 0 && userInput < 8) {
     errorMsgEl.textContent = 'Required minimum password lenght is 8.';
     return false;
   } else {
