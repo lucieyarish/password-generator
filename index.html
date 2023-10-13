@@ -14,6 +14,11 @@
             <h1 id="title"><span class="title-white">Generate a</span><br><span class="title-green">random password</span></h1>
             <p class="subtitle">Never use an insecure password again.</p>
             <div class="generate-container">
+                <div class="password-length-settings">
+                    <p class="">Default password length is 15 characters. To set a different length, enter the number here:</p>
+                    <input id="user-password-length" type="number" min="0">
+                    <p id="error-msg"></p>
+                </div>
                 <button class="btn-generate" id="generate-passwords" onclick="generatePasswords()">Generate passwords</button>
             </div>
             <div class="passwords-container">

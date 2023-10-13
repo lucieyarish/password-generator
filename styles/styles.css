@@ -32,6 +32,31 @@
     margin-bottom: 40px;
 }
 
+.password-length-settings {
+    color: #D5D4D8;
+    width: 400px;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.password-length-settings input {
+    background: #273549;
+    color: #D5D4D8;
+    width: 50px;
+    border: none;
+    border-radius: 6px;
+    padding: ;
+}
+
+#error-msg {
+    color: rgb(239, 56, 56);
+    font-size: 12px;
+}
+
 .btn-generate {
     font-size: 16px;
     padding: 9px 15px;
