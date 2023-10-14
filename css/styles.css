@@ -57,10 +57,31 @@ input::-webkit-inner-spin-button {
     padding-left: 15px;
 }
 
+input:focus {
+    outline: thin dotted #10B981;
+}
+
+#user-password-length.length-settings-error {
+    border: 1px solid #E57373;
+}
+
+#user-password-length.length-settings-error:focus {
+    outline: none;
+}
+
 #error-msg {
-    color: rgb(239, 56, 56);
-    font-size: 12px;
-    height: 15px;
+    color: #1F2937;
+    font-size: 14px;
+    height: 20px;
+    padding-top: 4px;
+    padding-bottom: 2px;
+    padding-left: 10px;
+    border-radius: 6px;
+    width: 310px;
+}
+
+#error-msg.apply-background {
+    background: #E57373;
 }
 
 .btn-generate {

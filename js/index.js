@@ -61,13 +61,21 @@ function resetUserInput() {
 
 function validateInput() {
   if (userInput !== 0 && userInput > 20) {
-    errorMsgEl.textContent = 'Required maximum password lenght is 20.';
+    errorMsgEl.innerHTML =
+      '<span><i class="fa fa-exclamation-circle"></i><span> Required maximum password length is 20.';
+    errorMsgEl.className = 'apply-background';
+    userInputEl.className = 'length-settings-error';
     return false;
   } else if (userInput !== 0 && userInput < 8) {
-    errorMsgEl.textContent = 'Required minimum password lenght is 8.';
+    errorMsgEl.innerHTML =
+      '<span><i class="fa fa-exclamation-circle"></i><span> Required minimum password length is 8.';
+    errorMsgEl.className = 'apply-background';
+    userInputEl.className = 'length-settings-error';
     return false;
   } else {
     errorMsgEl.textContent = '';
+    errorMsgEl.className = '';
+    userInputEl.className = '';
     return true;
   }
 }
