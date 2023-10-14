@@ -32,7 +32,7 @@
     margin-bottom: 40px;
 }
 
-.password-length-settings {
+.generate-container {
     color: #D5D4D8;
     width: 400px;
 }
@@ -43,22 +43,34 @@ input::-webkit-inner-spin-button {
   margin: 0;
 }
 
-.password-lenght-info {
-    margin-bottom: 20px;
+.password-length-container {
+    display: flex;
 }
 
-.password-length-settings input {
+.password-length {
+    margin-right: 20px;
+    margin-top: 8px;
+    margin-bottom: 0;
+    font-size: 16px;
+}
+
+.generate-container input {
     background: #273549;
     color: #D5D4D8;
-    width: 50px;
+    width: 36px;
     border: none;
     border-radius: 6px;
-    height: 36px;
-    padding-left: 15px;
+    height: 28px;
+    padding-left: 20px;
+    margin-right:20px;
 }
 
 input:focus {
     outline: thin dotted #10B981;
+}
+
+#user-password-length {
+    display: incline-block;
 }
 
 #user-password-length.length-settings-error {
@@ -71,13 +83,15 @@ input:focus {
 
 #error-msg {
     color: #1F2937;
-    font-size: 14px;
-    height: 20px;
+    font-size: 10px;
+    height: 16px;
     padding-top: 4px;
     padding-bottom: 2px;
     padding-left: 10px;
     border-radius: 6px;
-    width: 310px;
+    width: 215px;
+    display: inline-block;
+    margin-top: 6px;
 }
 
 #error-msg.apply-background {
@@ -95,7 +109,7 @@ input:focus {
 }
 
 .generate-container {
-    width: 450px;
+    width: 460px;
     border-bottom: 1px solid #2F3E53;
 }
 
@@ -151,6 +165,6 @@ input:focus {
     position: fixed;
   }
   
-  #copy-msg.show {
+#copy-msg.show {
     visibility: visible;
-  }
+}

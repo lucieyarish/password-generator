@@ -128,5 +128,5 @@ function alertUser(password) {
 
   setTimeout(() => {
     copyMsgEl.className = copyMsgEl.className.replace('show', '');
-  }, 2000);
+  }, 3000);
 }
