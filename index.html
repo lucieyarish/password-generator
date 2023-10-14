@@ -5,8 +5,9 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Karla:wght@400;700;800&display=swap" rel="stylesheet">       
-        <link rel="stylesheet" href="styles/styles.css">
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Karla:wght@400;700;800&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="css/font-awesome-4.7.0/css/font-awesome.min.css">       
+        <link rel="stylesheet" href="css/styles.css">
         <title>Password Generator</title>
     </head>
     <body>
@@ -15,7 +16,7 @@
             <p class="subtitle">Never use an insecure password again.</p>
             <div class="generate-container">
                 <div class="password-length-settings">
-                    <p class="">Default password length is 15 characters. To set a different length, enter the number here:</p>
+                    <p class="password-lenght-info">Default password length is 15 characters. To set a different length, enter the number here:</p>
                     <input id="user-password-length" type="number" min="0">
                     <p id="error-msg"></p>
                 </div>
@@ -23,11 +24,26 @@
             </div>
             <div class="passwords-container">
                 <div class="password-container">
-                    <p id="generated-password-el-1" class="generated-password"></p>
+                    <span id="generated-password-el-1" class="generated-password">
+                    </span>
+                    <span class="inline-btn">
+                        <button id="copy-btn-1" class="copy-btn" onclick="copyToClipboard()">
+                            <i class="fa fa-clone"></i>
+                        </button>
+                    </span>
                 </div>
                 <div class="password-container">
-                    <p id="generated-password-el-2" class="generated-password"></p>
+                    <span id="generated-password-el-2" class="generated-password">
+                    </span>
+                    <span class="inline-btn">
+                        <button id="copy-btn-2" class="copy-btn" onclick="copyPass2ToClipboard()">
+                            <i class="fa fa-clone"></i>
+                        </button>
+                    </span>
                 </div>
+                <div>
+                    <span id="copy-msg"></span>
+                </div> 
             </div>
         </div>
         <script type="module" src="js/index.js"></script>

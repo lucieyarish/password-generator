@@ -1,7 +1,7 @@
 #main-container {
     background-color: #1F2937;
-    width: 450px;
-    height: 400px;
+    width: 500px;
+    height: 450px;
     margin: 50px auto;
     border-radius: 5px;
     text-align: center;
@@ -43,18 +43,24 @@ input::-webkit-inner-spin-button {
   margin: 0;
 }
 
+.password-lenght-info {
+    margin-bottom: 20px;
+}
+
 .password-length-settings input {
     background: #273549;
     color: #D5D4D8;
     width: 50px;
     border: none;
     border-radius: 6px;
-    padding: ;
+    height: 36px;
+    padding-left: 15px;
 }
 
 #error-msg {
     color: rgb(239, 56, 56);
     font-size: 12px;
+    height: 15px;
 }
 
 .btn-generate {
@@ -83,11 +89,47 @@ input::-webkit-inner-spin-button {
     background: #273549;
     border-radius: 6px;
     margin-top: 30px;
-    font-size: 16px;
-    color: #55F991;
+    font-size: 14px;
     text-align: center;
+    display: flex;
 }
 
 .generated-password {
     margin-top: 10px;
+    color: #55F991;
+    display: inline-block;
+    width: 180px;
 }
+
+.copy-btn {
+    background: #273549;
+    border: none;
+    display: inline-block;
+}
+
+.copy-btn i {
+    color: #D5D4D8;
+}
+
+.inline-btn {
+    margin-top: 10px;
+    display: inline-block;
+}
+
+#copy-msg {
+    visibility: hidden;
+    color: #D5D4D8;
+    min-width: 150px;
+    margin-top: 70px;
+    margin-left: 0px;
+    font-size: 12px;
+    padding: 10px;
+    text-align: left;
+    left: 170px;
+    z-index: 1;
+    position: fixed;
+  }
+  
+  #copy-msg.show {
+    visibility: visible;
+  }
