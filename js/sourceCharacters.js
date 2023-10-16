@@ -1,4 +1,4 @@
-export const characters = [
+export const letters = [
   'A',
   'B',
   'C',
@@ -51,16 +51,9 @@ export const characters = [
   'x',
   'y',
   'z',
-  '0',
-  '1',
-  '2',
-  '3',
-  '4',
-  '5',
-  '6',
-  '7',
-  '8',
-  '9',
+];
+
+export const symbols = [
   '~',
   '`',
   '!',
@@ -91,3 +84,5 @@ export const characters = [
   '?',
   '/',
 ];
+
+export const numbers = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'];

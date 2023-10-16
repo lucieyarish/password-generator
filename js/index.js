@@ -1,4 +1,6 @@
-import { characters } from './sourceCharacters.js';
+import { letters } from './sourceCharacters.js';
+import { symbols } from './sourceCharacters.js';
+import { numbers } from './sourceCharacters.js';
 
 document
   .querySelector('#generate-passwords')
@@ -16,6 +18,10 @@ const generatedPasswordEl1 = document.getElementById('generated-password-el-1');
 const generatedPasswordEl2 = document.getElementById('generated-password-el-2');
 const userInputEl = document.getElementById('user-password-length');
 const errorMsgEl = document.getElementById('error-msg');
+let includeSymbolsEl = document.querySelector('#include-symbols');
+let includeNumbersEl = document.querySelector('#include-numbers');
+let symbolsIncluded = false;
+let numbersIncluded = false;
 let userInput = 0;
 
 userInputEl.addEventListener('blur', () => {
@@ -30,24 +36,36 @@ function generatePasswords() {
     return;
   }
 
+  if (!symbolsIncluded && !numbersIncluded) {
+    composePasswords(letters);
+  } else if (symbolsIncluded && !numbersIncluded) {
+    composePasswords(letters.concat(symbols));
+  } else if (!symbolsIncluded && numbersIncluded) {
+    composePasswords(letters.concat(numbers));
+  } else {
+    composePasswords(letters.concat(symbols).concat(numbers));
+  }
+}
+
+function composePasswords(charArr) {
   if (userInput !== 0) {
     for (let i = 0; i < userInput; i++) {
-      generatedPasswordEl1.textContent += getRandomSymbol();
-      generatedPasswordEl2.textContent += getRandomSymbol();
+      generatedPasswordEl1.textContent += getPassword(charArr);
+      generatedPasswordEl2.textContent += getPassword(charArr);
     }
     resetUserInput();
   } else {
     for (let i = 0; i < 15; i++) {
       userInputEl.value = '';
-      generatedPasswordEl1.textContent += getRandomSymbol();
-      generatedPasswordEl2.textContent += getRandomSymbol();
+      generatedPasswordEl1.textContent += getPassword(charArr);
+      generatedPasswordEl2.textContent += getPassword(charArr);
     }
   }
 }
 
-function getRandomSymbol() {
-  let randomIndex = Math.floor(Math.random() * characters.length);
-  return characters[randomIndex];
+function getPassword(charArr) {
+  let randomIndex = Math.floor(Math.random() * charArr.length);
+  return charArr[randomIndex];
 }
 
 function resetPreviousPasswords() {
@@ -130,3 +148,26 @@ function alertUser(password) {
     copyMsgEl.className = copyMsgEl.className.replace('show', '');
   }, 3000);
 }
+
+function includeSymbols() {
+  includeSymbolsEl.addEventListener('change', function () {
+    if (includeSymbolsEl.checked) {
+      symbolsIncluded = true;
+    } else {
+      symbolsIncluded = false;
+    }
+  });
+}
+
+function includeNumbers() {
+  includeNumbersEl.addEventListener('change', function () {
+    if (includeNumbersEl.checked) {
+      numbersIncluded = true;
+    } else {
+      numbersIncluded = false;
+    }
+  });
+}
+
+includeSymbols();
+includeNumbers();
