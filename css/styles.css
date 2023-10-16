@@ -52,7 +52,8 @@ input::-webkit-inner-spin-button {
     margin-top: 8px;
     margin-bottom: 8px;
     font-size: 16px;
-    width: 150px;
+    width: 140px;
+    height: 25px;
 }
 
 .password-settings-container input {
@@ -68,6 +69,10 @@ input::-webkit-inner-spin-button {
 
 input:focus {
     outline: thin dotted #10B981;
+}
+
+.toggle-container {
+    margin-top: 5px;
 }
 
 .toggle {
@@ -166,11 +171,12 @@ input:focus {
 .passwords-container {
     display: flex;
     justify-content: space-between;
+    width: 480px;
 }
 
 .password-container {
-    width: 210px;
-    height: 40px;
+    width: 220px;
+    height: 35px;
     background: #273549;
     border-radius: 6px;
     margin-top: 30px;
@@ -181,9 +187,11 @@ input:focus {
 
 .generated-password {
     margin-top: 10px;
+    padding-left: 3px;
     color: #55F991;
+    font-size: 13px;
     display: inline-block;
-    width: 180px;
+    width: 185px;
 }
 
 .copy-btn {
