@@ -142,8 +142,9 @@ input:focus {
     padding-top: 6px;
     padding-bottom: 2px;
     padding-left: 10px;
+    padding-right: 10px;
     border-radius: 6px;
-    width: 215px;
+    margin-bottom: 15px;
     display: inline-block;
     margin-top: 6px;
 }
@@ -225,4 +226,46 @@ input:focus {
   
 #copy-msg.show {
     visibility: visible;
+}
+
+@media (max-width: 414px) {
+    body {
+        margin: 0;
+    }
+
+    #main-container {
+        width: 480px;
+        height: 100vh;
+        margin: 0;
+    }
+
+    #title {
+        margin-top: 0;
+    }
+
+    .passwords-container {
+        flex-direction: column;
+    }
+
+    .generate-container {
+        width: 315px;
+    }
+
+    .subtitle {
+        width: 300px;
+        font-size: 16px;
+    }
+
+    .password-settings {
+        font-size: 14px;
+    }
+
+    .password-settings-container {
+        flex-wrap: wrap;
+    }
+
+    .btn-generate {
+        width: 220px;
+    }
+
 }
