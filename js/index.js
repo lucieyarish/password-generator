@@ -175,3 +175,9 @@ userInputEl.addEventListener('keypress', function (event) {
     generatePasswords();
   }
 });
+
+userInputEl.addEventListener('input', function (event) {
+  errorMsgEl.innerHTML = '';
+  errorMsgEl.className = '';
+  userInputEl.className = '';
+});
