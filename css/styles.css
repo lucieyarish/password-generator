@@ -43,18 +43,19 @@ input::-webkit-inner-spin-button {
   margin: 0;
 }
 
-.password-length-container {
+.password-settings-container {
     display: flex;
 }
 
-.password-length {
+.password-settings {
     margin-right: 20px;
     margin-top: 8px;
-    margin-bottom: 0;
+    margin-bottom: 8px;
     font-size: 16px;
+    width: 150px;
 }
 
-.generate-container input {
+.password-settings-container input {
     background: #273549;
     color: #D5D4D8;
     width: 36px;
@@ -69,8 +70,56 @@ input:focus {
     outline: thin dotted #10B981;
 }
 
-#user-password-length {
-    display: incline-block;
+.toggle {
+	cursor: pointer;
+	display: inline-block;
+}
+
+.toggle-switch {
+	display: inline-block;
+	background: #ccc;
+	border-radius: 16px;
+	width: 46px;
+	height: 25px;
+	position: relative;
+	vertical-align: middle;
+	transition: background 0.25s;
+	&:before,
+	&:after {
+		content: "";
+	}
+	&:before {
+		display: block;
+		background: linear-gradient(to bottom, #fff 0%,#eee 100%);
+		border-radius: 50%;
+		box-shadow: 0 0 0 1px rgba(0,0,0,0.25);
+		width: 18px;
+		height: 18px;
+		position: absolute;
+		top: 3.5px;
+		left: 5.5px;
+		transition: left 0.25s;
+	}
+	.toggle:hover &:before {
+		background: linear-gradient(to bottom, #fff 0%,#fff 100%);
+		box-shadow: 0 0 0 1px rgba(0,0,0,0.5);
+	}
+	.toggle-checkbox:checked + & {
+		background: #4ADF86;
+		&:before {
+			left: 22px;
+		}
+	}
+}
+
+.toggle-checkbox {
+	position: absolute;
+	visibility: hidden;
+}
+.toggle-label {
+	margin-left: 4px;
+	position: relative;
+	top: 1px;
 }
 
 #user-password-length.length-settings-error {
@@ -105,6 +154,7 @@ input:focus {
     background: #10B981;
     border: none;
     border-radius: 6px;
+    margin-top: 25px;
     margin-bottom: 30px;
 }
 

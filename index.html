@@ -15,14 +15,38 @@
             <h1 id="title"><span class="title-white">Generate a</span><br><span class="title-green">random password</span></h1>
             <p class="subtitle">Never use an insecure password again.</p>
             <div class="generate-container">
-                <div class="password-length-container">
+                <div class="password-settings-container">
                     <div>
-                        <p class="password-length">Password length:</p>
+                        <p class="password-settings">Password length:</p>
                     </div>
                     <div class="password-length-input">
                         <input id="user-password-length" type="number" min="0">
                     </div>
                     <p id="error-msg"></p>
+                </div>
+                <div class="password-settings-container">
+                    <div>
+                        <p class="password-settings">Symbols:</p>
+                    </div>
+                    <div>
+                        <label class="toggle">
+                            <input class="toggle-checkbox" type="checkbox">
+                            <div class="toggle-switch"></div>
+                            <span class="toggle-label"></span>
+                        </label>
+                    </div>
+                </div>
+                <div class="password-settings-container">
+                    <div>
+                        <p class="password-settings">Numbers:</p>
+                    </div>
+                    <div>
+                        <label class="toggle">
+                            <input class="toggle-checkbox" type="checkbox">
+                            <div class="toggle-switch"></div>
+                            <span class="toggle-label"></span>
+                        </label>
+                    </div>
                 </div>
                 <button class="btn-generate" id="generate-passwords" onclick="generatePasswords()">Generate passwords</button>
             </div>
