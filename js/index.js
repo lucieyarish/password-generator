@@ -18,19 +18,21 @@ const generatedPasswordEl1 = document.getElementById('generated-password-el-1');
 const generatedPasswordEl2 = document.getElementById('generated-password-el-2');
 const userInputEl = document.getElementById('user-password-length');
 const errorMsgEl = document.getElementById('error-msg');
+const generateBtnEl = document.getElementById('#generate-passwords');
 let includeSymbolsEl = document.querySelector('#include-symbols');
 let includeNumbersEl = document.querySelector('#include-numbers');
 let symbolsIncluded = false;
 let numbersIncluded = false;
 let userInput = 0;
 
-userInputEl.addEventListener('blur', () => {
+userInputEl.addEventListener('input', () => {
   userInput = userInputEl.value;
 });
 
 function generatePasswords() {
   resetPreviousPasswords();
   let isPasswordLengthValid = validateInput();
+  console.log(userInput);
 
   if (!isPasswordLengthValid) {
     return;
@@ -53,7 +55,6 @@ function composePasswords(charArr) {
       generatedPasswordEl1.textContent += getPassword(charArr);
       generatedPasswordEl2.textContent += getPassword(charArr);
     }
-    resetUserInput();
   } else {
     for (let i = 0; i < 15; i++) {
       userInputEl.value = '';
@@ -71,10 +72,6 @@ function getPassword(charArr) {
 function resetPreviousPasswords() {
   generatedPasswordEl1.textContent = '';
   generatedPasswordEl2.textContent = '';
-}
-
-function resetUserInput() {
-  userInput = 0;
 }
 
 function validateInput() {
@@ -171,3 +168,10 @@ function includeNumbers() {
 
 includeSymbols();
 includeNumbers();
+
+userInputEl.addEventListener('keypress', function (event) {
+  if (event.key === 'Enter') {
+    event.preventDefault();
+    generatePasswords();
+  }
+});

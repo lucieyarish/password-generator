@@ -64,7 +64,7 @@ input::-webkit-inner-spin-button {
     border-radius: 6px;
     height: 28px;
     padding-left: 20px;
-    margin-right:20px;
+    margin-right:15px;
 }
 
 input:focus {
@@ -137,9 +137,9 @@ input:focus {
 
 #error-msg {
     color: #1F2937;
-    font-size: 10px;
+    font-size: 9.5px;
     height: 16px;
-    padding-top: 4px;
+    padding-top: 6px;
     padding-bottom: 2px;
     padding-left: 10px;
     border-radius: 6px;
