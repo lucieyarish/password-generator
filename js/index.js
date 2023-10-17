@@ -34,13 +34,12 @@ userInputEl.addEventListener('input', () => {
 function generatePasswords() {
   resetPreviousPasswords();
   let isPasswordLengthValid = validateInput();
-  console.log(userInput);
 
   if (!isPasswordLengthValid) {
     return;
   }
 
-  if (!symbolsIncluded && !numbersIncluded && userInput === 0) {
+  if (!symbolsIncluded && !numbersIncluded) {
     composePasswords(letters);
   } else if (symbolsIncluded && !numbersIncluded) {
     composePasswords(letters.concat(symbols));
@@ -77,13 +76,23 @@ function resetPreviousPasswords() {
 }
 
 function validateInput() {
-  if (userInput !== 0 && userInput !== undefined && userInput > 20) {
+  if (
+    userInput !== 0 &&
+    userInput !== undefined &&
+    userInput !== '' &&
+    userInput > 20
+  ) {
     errorMsgEl.innerHTML =
       '<i class="fa fa-exclamation-circle"></i> Required maximum password length is 20.';
     errorMsgEl.className = 'apply-background';
     userInputEl.className = 'length-settings-error';
     return false;
-  } else if (userInput !== 0 && userInput !== undefined && userInput < 8) {
+  } else if (
+    userInput !== 0 &&
+    userInput !== undefined &&
+    userInput !== '' &&
+    userInput < 8
+  ) {
     errorMsgEl.innerHTML =
       '<i class="fa fa-exclamation-circle"></i> Required minimum password length is 8.';
     errorMsgEl.className = 'apply-background';
@@ -93,6 +102,7 @@ function validateInput() {
     errorMsgEl.textContent = '';
     errorMsgEl.className = '';
     userInputEl.className = '';
+    userInput = 0;
     return true;
   }
 }
