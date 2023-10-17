@@ -11,18 +11,19 @@
         <title>Password Generator</title>
     </head>
     <body>
-        <div id="main-container">
-            <h1 id="title"><span class="title-white">Generate a</span><br><span class="title-green">random password</span></h1>
-            <p class="subtitle">Never use an insecure password again.</p>
-            <div class="generate-container">
+        <div id="main-container" class="main-container">
+            <button id="theme-btn" onclick="toggleMode()"><i class="fa fa-sun-o"></i></button>
+            <h1 id="title"><span id="title-start"class="title-white">Generate a</span><br><span class="title-green">random password</span></h1>
+            <p id="subtitle" class="subtitle">Never use an insecure password again.</p>
+            <div id="generate-container" class="generate-container">
                 <div class="password-settings-container">
                     <div>
                         <p class="password-settings">Password length:</p>
                     </div>
                     <div class="password-length-input">
-                        <input id="user-password-length" type="number" min="0">
+                        <input id="user-password-length" class="user-password-length" type="number" min="0">
                     </div>
-                    <span id="error-msg"></span>
+                    <span id="error-msg" class="error-msg"></span>
                 </div>
                 <div class="password-settings-container">
                     <div>
@@ -31,7 +32,7 @@
                     <div class="toggle-container">
                         <label class="toggle">
                             <input id="include-symbols" class="toggle-checkbox" type="checkbox">
-                            <div class="toggle-switch"></div>
+                            <div id="toggle-symbols" class="toggle-switch"></div>
                             <span class="toggle-label"></span>
                         </label>
                     </div>
@@ -43,7 +44,7 @@
                     <div class="toggle-container">
                         <label class="toggle">
                             <input id="include-numbers" class="toggle-checkbox" type="checkbox">
-                            <div class="toggle-switch"></div>
+                            <div id="toggle-numbers" class="toggle-switch"></div>
                             <span class="toggle-label"></span>
                         </label>
                     </div>

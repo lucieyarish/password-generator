@@ -14,6 +14,8 @@ document
   .querySelector('#copy-btn-2')
   .addEventListener('click', copyPass2ToClipboard);
 
+document.querySelector('#theme-btn').addEventListener('click', toggleMode);
+
 const generatedPasswordEl1 = document.getElementById('generated-password-el-1');
 const generatedPasswordEl2 = document.getElementById('generated-password-el-2');
 const userInputEl = document.getElementById('user-password-length');
@@ -181,3 +183,14 @@ userInputEl.addEventListener('input', function (event) {
   errorMsgEl.className = '';
   userInputEl.className = '';
 });
+
+function toggleMode() {
+  document.getElementById('theme-btn').innerHTML =
+    '<i class="fa fa-moon-o"></i>';
+  document.getElementById('main-container').classList.toggle('light');
+  document.getElementById('title-start').classList.toggle('title-dark');
+  document.getElementById('subtitle').classList.toggle('grey-text');
+  document.getElementById('generate-container').classList.toggle('grey-text');
+  document.getElementById('toggle-symbols').classList.toggle('toggle-dark');
+  document.getElementById('toggle-numbers').classList.toggle('toggle-dark');
+}
