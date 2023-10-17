@@ -43,7 +43,7 @@ function generatePasswords() {
 }
 
 function composePasswords(charArr) {
-  if (userInput !== 0) {
+  if (userInput !== 0 && userInput !== '') {
     for (let i = 0; i < userInput; i++) {
       generatedPasswordEl1.textContent += getPassword(charArr);
       generatedPasswordEl2.textContent += getPassword(charArr);
@@ -94,7 +94,6 @@ function validateInput() {
     errorMsgEl.textContent = '';
     errorMsgEl.className = '';
     userInputEl.className = '';
-    userInput = 0;
     return true;
   }
 }
@@ -130,7 +129,6 @@ function copyPass2ToClipboard() {
 }
 
 function alertUser(password) {
-  console.log(password);
   if (password.length === 0) {
     return;
   }
@@ -194,8 +192,12 @@ themeBtnEl.addEventListener('click', function () {
 
   document.getElementById('main-container').classList.toggle('light');
   document.getElementById('title-start').classList.toggle('title-dark');
+  document.getElementById('title-end').classList.toggle('title-darker-green');
   document.getElementById('subtitle').classList.toggle('grey-text');
   document.getElementById('generate-container').classList.toggle('grey-text');
   document.getElementById('toggle-symbols').classList.toggle('toggle-dark');
   document.getElementById('toggle-numbers').classList.toggle('toggle-dark');
+  document
+    .getElementById('user-password-length')
+    .classList.toggle('background-dark');
 });

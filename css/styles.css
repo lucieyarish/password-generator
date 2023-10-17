@@ -65,7 +65,7 @@ input::-webkit-inner-spin-button {
 }
 
 #user-password-length {
-    background: #273549;
+    background: #6B7280;
     color: #FFFFFF;
     width: 28px;
     border: none;
@@ -246,12 +246,20 @@ input:focus {
     color: #273549;
 }
 
+.title-darker-green {
+    color: #10B981;
+}
+
 .grey-text {
     color: #6B7280;
 }
 
 .toggle-dark {
-    background-color: #1F2937;
+    background-color: #1F2937; 
+}
+
+.background-dark {
+    background-color: #1F2937 !important; 
 }
 
 .icon-dark {
