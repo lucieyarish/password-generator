@@ -6,23 +6,16 @@ document
   .querySelector('#generate-passwords')
   .addEventListener('click', generatePasswords);
 
-document
-  .querySelector('#copy-btn-1')
-  .addEventListener('click', copyToClipboard);
-
-document
-  .querySelector('#copy-btn-2')
-  .addEventListener('click', copyPass2ToClipboard);
-
 document.querySelector('#theme-btn').addEventListener('click', toggleMode);
 
 const generatedPasswordEl1 = document.getElementById('generated-password-el-1');
 const generatedPasswordEl2 = document.getElementById('generated-password-el-2');
 const userInputEl = document.getElementById('user-password-length');
 const errorMsgEl = document.getElementById('error-msg');
-const generateBtnEl = document.getElementById('#generate-passwords');
-let includeSymbolsEl = document.querySelector('#include-symbols');
-let includeNumbersEl = document.querySelector('#include-numbers');
+const copyBtnEl1 = document.getElementById('copy-btn-1');
+const copyBtnEl2 = document.getElementById('copy-btn-2');
+const includeSymbolsEl = document.querySelector('#include-symbols');
+const includeNumbersEl = document.querySelector('#include-numbers');
 let symbolsIncluded = false;
 let numbersIncluded = false;
 let userInput = 0;
@@ -107,21 +100,13 @@ function validateInput() {
   }
 }
 
-function copyToClipboard() {
-  if (
-    generatedPasswordEl1.innerText !== undefined ||
-    generatedPasswordEl1.innerText.length !== 0
-  ) {
-    copyPass1ToClipboard();
-  } else if (
-    generatedPasswordEl2.innerText !== undefined ||
-    generatedPasswordEl2.innerText.length !== 0
-  ) {
-    copyPass2ToClipboard();
-  } else {
-    return;
-  }
-}
+copyBtnEl1.addEventListener('click', function (event) {
+  copyPass1ToClipboard();
+});
+
+copyBtnEl2.addEventListener('click', function (event) {
+  copyPass2ToClipboard();
+});
 
 function copyPass1ToClipboard() {
   navigator.clipboard
@@ -146,11 +131,12 @@ function copyPass2ToClipboard() {
 }
 
 function alertUser(password) {
+  console.log(password);
   if (password.length === 0) {
     return;
   }
   var copyMsgEl = document.getElementById('copy-msg');
-  copyMsgEl.textContent = `${password} was copied to your clipboard!`;
+  copyMsgEl.textContent = `Password: "${password}" was copied to your clipboard!`;
   copyMsgEl.className = 'show';
 
   setTimeout(() => {
