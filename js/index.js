@@ -6,14 +6,13 @@ document
   .querySelector('#generate-passwords')
   .addEventListener('click', generatePasswords);
 
-document.querySelector('#theme-btn').addEventListener('click', toggleMode);
-
 const generatedPasswordEl1 = document.getElementById('generated-password-el-1');
 const generatedPasswordEl2 = document.getElementById('generated-password-el-2');
 const userInputEl = document.getElementById('user-password-length');
 const errorMsgEl = document.getElementById('error-msg');
 const copyBtnEl1 = document.getElementById('copy-btn-1');
 const copyBtnEl2 = document.getElementById('copy-btn-2');
+const themeBtnEl = document.querySelector('#theme-btn');
 const includeSymbolsEl = document.querySelector('#include-symbols');
 const includeNumbersEl = document.querySelector('#include-numbers');
 let symbolsIncluded = false;
@@ -180,13 +179,23 @@ userInputEl.addEventListener('input', function (event) {
   userInputEl.className = '';
 });
 
-function toggleMode() {
-  document.getElementById('theme-btn').innerHTML =
-    '<i class="fa fa-moon-o"></i>';
+themeBtnEl.addEventListener('click', function () {
+  const icon = this.querySelector('i');
+
+  if (icon.classList.contains('fa-sun-o')) {
+    icon.classList.remove('fa-sun-o');
+    icon.classList.add('fa-moon-o');
+    icon.classList.add('icon-dark');
+  } else {
+    icon.classList.remove('fa-moon-o');
+    icon.classList.remove('icon-dark');
+    icon.classList.add('fa-sun-o');
+  }
+
   document.getElementById('main-container').classList.toggle('light');
   document.getElementById('title-start').classList.toggle('title-dark');
   document.getElementById('subtitle').classList.toggle('grey-text');
   document.getElementById('generate-container').classList.toggle('grey-text');
   document.getElementById('toggle-symbols').classList.toggle('toggle-dark');
   document.getElementById('toggle-numbers').classList.toggle('toggle-dark');
-}
+});

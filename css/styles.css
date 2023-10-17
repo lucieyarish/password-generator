@@ -10,6 +10,14 @@
     font-family: 'Inter', sans-serif;;
 }
 
+.toggle-mode-btn {
+    float: right;
+    background: none;
+    border: none;
+    color:#fff;
+    font-size: 25px;
+}
+
 #title {
     font-family: 'Karla', sans-serif;
     font-weight: 800;
@@ -246,20 +254,24 @@ input:focus {
     background-color: #1F2937;
 }
 
+.icon-dark {
+    color: #1F2937;
+}
+
 /* MEDIA QUERIES */
-@media (max-width: 414px) {
+@media (max-width: 400px) {
     body {
         margin: 0;
     }
 
     .main-container {
-        width: 480px;
+        width: 330px;
         height: 100vh;
         margin: 0;
     }
 
     #title {
-        margin-top: 0;
+        margin-top: 40px;
     }
 
     .passwords-container {
@@ -285,6 +297,10 @@ input:focus {
 
     .btn-generate {
         width: 220px;
+    }
+
+    .toggle-mode-btn {
+        margin-right: 30px;
     }
 
 }
