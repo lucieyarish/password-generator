@@ -17,40 +17,47 @@
             <h1 id="title"><span id="title-start"class="title-white">Generate a</span><br><span id="title-end" class="title-green">random password</span></h1>
             <p id="subtitle" class="subtitle">Never use an insecure password again.</p>
             <div id="generate-container" class="generate-container">
-                <div class="password-settings-container">
+                <div class="user-settings-container">
                     <div>
-                        <p class="password-settings">Password length:</p>
+                        <span id="error-msg" class="error-msg"></span>
+                        <div class="password-settings-container">
+                            <div class="password-settings-left">
+                                <p class="password-settings">Password length:</p>
+                            </div>
+                            <div class="password-length-input">
+                                <input id="user-password-length" class="user-password" type="number" min="0">
+                            </div>
+                        </div>
+                        <div class="password-settings-container">
+                            <div class="toggle-left-margin">
+                                <p class="password-settings">Symbols:</p>
+                            </div>
+                            <div class="toggle-container">
+                                <label class="toggle">
+                                    <input id="include-symbols" class="toggle-checkbox" type="checkbox">
+                                    <div id="toggle-symbols" class="toggle-switch"></div>
+                                    <span class="toggle-label"></span>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="password-settings-container">
+                            <div class="toggle-left-margin">
+                                <p class="password-settings">Numbers:</p>
+                            </div>
+                            <div class="toggle-container">
+                                <label class="toggle">
+                                    <input id="include-numbers" class="toggle-checkbox" type="checkbox">
+                                    <div id="toggle-numbers" class="toggle-switch"></div>
+                                    <span class="toggle-label"></span>
+                                </label>
+                            </div>
+                        </div>
+                        <div>
+                            <button class="btn-generate" id="generate-passwords" onclick="generatePasswords()">Generate passwords</button>
+    
+                        </div>
                     </div>
-                    <div class="password-length-input">
-                        <input id="user-password-length" class="user-password" type="number" min="0">
-                    </div>
-                    <span id="error-msg" class="error-msg"></span>
                 </div>
-                <div class="password-settings-container">
-                    <div>
-                        <p class="password-settings">Symbols:</p>
-                    </div>
-                    <div class="toggle-container">
-                        <label class="toggle">
-                            <input id="include-symbols" class="toggle-checkbox" type="checkbox">
-                            <div id="toggle-symbols" class="toggle-switch"></div>
-                            <span class="toggle-label"></span>
-                        </label>
-                    </div>
-                </div>
-                <div class="password-settings-container">
-                    <div>
-                        <p class="password-settings">Numbers:</p>
-                    </div>
-                    <div class="toggle-container">
-                        <label class="toggle">
-                            <input id="include-numbers" class="toggle-checkbox" type="checkbox">
-                            <div id="toggle-numbers" class="toggle-switch"></div>
-                            <span class="toggle-label"></span>
-                        </label>
-                    </div>
-                </div>
-                <button class="btn-generate" id="generate-passwords" onclick="generatePasswords()">Generate passwords</button>
             </div>
             <div class="passwords-container">
                 <div class="password-container">
@@ -72,7 +79,7 @@
                     </span>
                 </div>
             </div>
-            <div>
+            <div class="copy-msg-container">
                 <span id="copy-msg" class="copy-msg-text copy-msg-text-bckg"></span>
             </div> 
             <div class="footer">

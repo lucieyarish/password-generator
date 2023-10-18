@@ -193,6 +193,7 @@ themeBtnEl.addEventListener('click', function () {
   document.getElementById('generate-container').classList.toggle('grey-text');
   document.getElementById('toggle-symbols').classList.toggle('toggle-dark');
   document.getElementById('toggle-numbers').classList.toggle('toggle-dark');
+  document.querySelector('body').classList.toggle('light');
 
   const input = document.querySelector('input');
   if (!input.classList.contains('background-dark')) {
