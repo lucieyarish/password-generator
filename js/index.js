@@ -130,10 +130,10 @@ function alertUser(password) {
   }
   var copyMsgEl = document.getElementById('copy-msg');
   copyMsgEl.textContent = `Password: "${password}" was copied to your clipboard!`;
-  copyMsgEl.className = 'show';
+  copyMsgEl.classList.add('show');
 
   setTimeout(() => {
-    copyMsgEl.className = copyMsgEl.className.replace('show', '');
+    copyMsgEl.classList.remove('show');
   }, 3000);
 }
 
@@ -176,7 +176,6 @@ userInputEl.addEventListener('input', function () {
 
 themeBtnEl.addEventListener('click', function () {
   const icon = this.querySelector('i');
-
   if (icon.classList.contains('fa-sun-o')) {
     icon.classList.remove('fa-sun-o');
     icon.classList.add('fa-moon-o');
@@ -196,12 +195,18 @@ themeBtnEl.addEventListener('click', function () {
   document.getElementById('toggle-numbers').classList.toggle('toggle-dark');
 
   const input = document.querySelector('input');
-
   if (!input.classList.contains('background-dark')) {
     input.classList.add('background-dark');
   } else {
     input.classList.remove('background-dark');
   }
 
-  document.getElementById('copy-msg').classList.toggle('text-dark');
+  const copyMsg = document.getElementById('copy-msg');
+  if (!copyMsg.classList.contains('text-dark')) {
+    copyMsg.classList.add('text-dark');
+  } else {
+    copyMsg.classList.remove('text-dark');
+  }
+
+  // document.getElementById('copy-msg').classList.toggle('text-dark');
 });

@@ -223,7 +223,7 @@ input:focus {
     display: inline-block;
 }
 
-#copy-msg {
+.copy-msg-text {
     visibility: hidden;
     color: #D5D4D8;
     min-width: 150px;
