@@ -244,8 +244,7 @@ input:focus {
 }
 
 .footer {
-    margin-top: 35px;
-    height: 30px;
+    margin-top: 20px;
 }
 
 .footer-text {
@@ -322,8 +321,21 @@ input:focus {
         margin-top: 40px;
     }
 
+    .generate-container {
+        text-align: center;
+    }
+
+    .password-settings-container {
+        margin-left: 45px;
+    }
+
+    .password-settings {
+        text-align: left;
+    }
+
     .passwords-container {
         flex-direction: column;
+        margin-left: 45px;
     }
 
     .generate-container {
@@ -353,6 +365,7 @@ input:focus {
 
     .footer {
         text-align: center;
+        margin-top: 10px;
     }
 
     .social-links {
