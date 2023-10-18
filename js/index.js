@@ -19,10 +19,6 @@ let symbolsIncluded = false;
 let numbersIncluded = false;
 let userInput = 0;
 
-userInputEl.addEventListener('input', () => {
-  userInput = userInputEl.value;
-});
-
 function generatePasswords() {
   resetPreviousPasswords();
   let isPasswordLengthValid = validateInput();
@@ -76,8 +72,8 @@ function validateInput() {
   ) {
     errorMsgEl.innerHTML =
       '<i class="fa fa-exclamation-circle"></i> Required maximum password length is 20.';
-    errorMsgEl.className = 'apply-background';
-    userInputEl.className = 'length-settings-error';
+    errorMsgEl.classList.add('apply-background');
+    userInputEl.classList.add('length-settings-error');
     return false;
   } else if (
     userInput !== 0 &&
@@ -87,13 +83,13 @@ function validateInput() {
   ) {
     errorMsgEl.innerHTML =
       '<i class="fa fa-exclamation-circle"></i> Required minimum password length is 8.';
-    errorMsgEl.className = 'apply-background';
-    userInputEl.className = 'length-settings-error';
+    errorMsgEl.classList.add('apply-background');
+    userInputEl.classList.add('length-settings-error');
     return false;
   } else {
     errorMsgEl.textContent = '';
-    errorMsgEl.className = '';
-    userInputEl.className = '';
+    errorMsgEl.classList.remove('apply-background');
+    userInputEl.classList.remove('length-settings-error');
     return true;
   }
 }
@@ -171,10 +167,11 @@ userInputEl.addEventListener('keypress', function (event) {
   }
 });
 
-userInputEl.addEventListener('input', function (event) {
+userInputEl.addEventListener('input', function () {
+  userInput = userInputEl.value;
   errorMsgEl.innerHTML = '';
-  errorMsgEl.className = '';
-  userInputEl.className = '';
+  errorMsgEl.classList.remove('apply-background');
+  userInputEl.classList.remove('length-settings-error');
 });
 
 themeBtnEl.addEventListener('click', function () {
@@ -191,13 +188,20 @@ themeBtnEl.addEventListener('click', function () {
   }
 
   document.getElementById('main-container').classList.toggle('light');
-  document.getElementById('title-start').classList.toggle('title-dark');
-  document.getElementById('title-end').classList.toggle('title-darker-green');
+  document.getElementById('title-start').classList.toggle('text-dark');
+  document.getElementById('title-end').classList.toggle('text-darker-green');
   document.getElementById('subtitle').classList.toggle('grey-text');
   document.getElementById('generate-container').classList.toggle('grey-text');
   document.getElementById('toggle-symbols').classList.toggle('toggle-dark');
   document.getElementById('toggle-numbers').classList.toggle('toggle-dark');
-  document
-    .getElementById('user-password-length')
-    .classList.toggle('background-dark');
+
+  const input = document.querySelector('input');
+
+  if (!input.classList.contains('background-dark')) {
+    input.classList.add('background-dark');
+  } else {
+    input.classList.remove('background-dark');
+  }
+
+  document.getElementById('copy-msg').classList.toggle('text-dark');
 });

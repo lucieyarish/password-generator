@@ -16,6 +16,7 @@
     border: none;
     color:#fff;
     font-size: 25px;
+    cursor: pointer;
 }
 
 #title {
@@ -64,7 +65,7 @@ input::-webkit-inner-spin-button {
     height: 25px;
 }
 
-#user-password-length {
+.user-password {
     background: #6B7280;
     color: #FFFFFF;
     width: 28px;
@@ -172,6 +173,7 @@ input:focus {
     margin-top: 45px;
     margin-bottom: 30px;
     width: 220px;
+    cursor: pointer;
 }
 
 .generate-container {
@@ -209,6 +211,7 @@ input:focus {
     background: #273549;
     border: none;
     display: inline-block;
+    cursor: pointer;
 }
 
 .copy-btn i {
@@ -242,11 +245,11 @@ input:focus {
     background-color: #ECFDF5;
 }
 
-.title-dark {
+.text-dark {
     color: #273549;
 }
 
-.title-darker-green {
+.text-darker-green {
     color: #10B981;
 }
 
