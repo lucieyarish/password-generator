@@ -129,7 +129,7 @@ function alertUser(password) {
     return;
   }
   var copyMsgEl = document.getElementById('copy-msg');
-  copyMsgEl.textContent = `Password: "${password}" was copied to your clipboard!`;
+  copyMsgEl.textContent = `Password: "${password}" copied to clipboard!`;
   copyMsgEl.classList.add('show');
 
   setTimeout(() => {
@@ -207,6 +207,4 @@ themeBtnEl.addEventListener('click', function () {
   } else {
     copyMsg.classList.remove('text-dark');
   }
-
-  // document.getElementById('copy-msg').classList.toggle('text-dark');
 });

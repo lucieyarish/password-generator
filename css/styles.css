@@ -225,16 +225,19 @@ input:focus {
 
 .copy-msg-text {
     visibility: hidden;
-    color: #D5D4D8;
-    min-width: 150px;
-    margin-top: 8px;
+    color: #273549;
+    margin-top: 15px;
     margin-left: 0px;
     font-size: 12px;
-    padding: 10px;
+    padding: 6px;
     text-align: left;
-    left: 170px;
-    display: block;
-  }
+    display: inline-flex;
+    border-radius: 6px;
+}
+
+.copy-msg-text-bckg {
+    background: #D5D4D8;
+}
   
 #copy-msg.show {
     visibility: visible;
