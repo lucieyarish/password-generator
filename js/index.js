@@ -207,4 +207,11 @@ themeBtnEl.addEventListener('click', function () {
   } else {
     copyMsg.classList.remove('text-dark');
   }
+
+  const copyright = document.getElementById('copyright');
+  if (!copyright.classList.contains('footer-text-dark')) {
+    copyright.classList.add('footer-text-dark');
+  } else {
+    copyright.classList.remove('footer-text-dark');
+  }
 });

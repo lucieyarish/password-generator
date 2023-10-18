@@ -1,7 +1,7 @@
 .main-container {
     background-color: #1F2937;
     width: 460px;
-    height: 500px;
+    height: 530px;
     margin: 50px auto;
     border-radius: 5px;
     text-align: center;
@@ -243,6 +243,34 @@ input:focus {
     visibility: visible;
 }
 
+.footer {
+    margin-top: 35px;
+    height: 30px;
+}
+
+.footer-text {
+    color: #D5D4D8; 
+    font-size: 11px;
+    display: inline;
+}
+
+.footer-icon-red {
+    color: #EF5350; 
+}
+
+.social-links {
+    float: right;
+}
+
+.footer-icon-grey {
+    color: #6B7280;
+    font-size: 25px;
+}
+
+.fa-github {
+    margin-right: 10px;
+}
+
 /* LIGHT MODE STYLES */
 .light {
     background-color: #ECFDF5;
@@ -270,6 +298,12 @@ input:focus {
 
 .icon-dark {
     color: #1F2937;
+}
+
+.footer-text-dark {
+    color: #1F2937; 
+    font-size: 11px;
+    display: inline;
 }
 
 /* MEDIA QUERIES */
@@ -317,4 +351,13 @@ input:focus {
         margin-right: 30px;
     }
 
+    .footer {
+        text-align: center;
+    }
+
+    .social-links {
+        float: none;
+        display: block;
+        margin-top: 20px;
+    }
 }
