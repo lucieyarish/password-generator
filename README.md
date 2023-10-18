@@ -1,4 +1,4 @@
-Password Generator
+#Password Generator
 
 This solo project was build entirely by me while learning JavaScript basics through Scrimba's Frontend Career Path courses. Figma design was provided by Scrimba and later on adjusted by me.
 
