@@ -26,6 +26,10 @@ Stretch goals added by me:
 - Try to make app responsive
 - Deploy to Netlify
 
-Unfortunately, I did not follow mobile-first approach from the beginning, and therefore, the app has many limitations when it comes to layout on different devices. The CSS is rather mess, but since the project was built in order to practice mainly JavaScript, I've decided to not try making it perfect at the moment and move on with the course instead as I'll be learning more about responsive design and relative units in the upcoming lessons.
+Unfortunately, I did not follow mobile-first approach from the beginning, and therefore, the app has many limitations when it comes to its layout on different devices. The styles are rather messy, but since the project was built in order to practice mainly JavaScript, I've decided to not try making it perfect at the moment. Instead, I'm going to focus on moving on with the frontend career path course as I'll be learning more about responsive design and relative units in the upcoming lessons.
 
 Although the app is not fully responsive and doesn't look great on all devices, I am still quite happy with the result. This is the first bigger project I built solely with HTML, CSS and JS, and all the functionalities are working as expected.
+
+Total dev time: 17 hours
+
+(A fairly big amount of time was spent on attempts in making the app fully responsive and, consequently, creating a lot of CSS mess.)
