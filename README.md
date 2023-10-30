@@ -2,7 +2,7 @@
 
 This solo project was build entirely by me while learning JavaScript basics through Scrimba's Frontend Career Path courses. Figma design was provided by Scrimba and later on adjusted by me.
 
-You can view the finished project on [Netlify](https://main--sunny-sunburst-c20fed.netlify.app/)!
+You can view the finished project on [Netlify](https://password-generator-lucieyarish.netlify.app/)!
 
 ![Showcase photo of the finished Password Generator project](./password-generator-showcase.png)
 
